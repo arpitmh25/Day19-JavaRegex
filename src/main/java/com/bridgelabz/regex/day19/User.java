@@ -5,13 +5,15 @@ public class User {
     private String lastName;
     private String email;
     private String phoneNumber;
+    private String password;
 
-    public User(String firstName, String lastName, String email, String phoneNumber) {
+    public User(String firstName, String lastName, String email, String phoneNumber, String password) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -30,5 +32,10 @@ public class User {
     public String getPhoneNumber() {
 
         return phoneNumber;
+    }
+
+    public String getPassword() {
+
+        return password;
     }
 }

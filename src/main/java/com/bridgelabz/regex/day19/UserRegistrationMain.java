@@ -14,7 +14,9 @@ public class UserRegistrationMain {
         String email = sc.next();
         System.out.println("Enter PhoneNumber");
         String phoneNumber = sc.next();
-        User userdetail = new User(firstName, lastName, email, phoneNumber);
+        System.out.println("Enter Password: ");
+        String password = sc.next();
+        User userdetail = new User(firstName, lastName, email, phoneNumber , password);
         UserRegistration registration = new UserRegistration();
         registration.register(userdetail);
     }
