@@ -4,21 +4,24 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-    private static final String First_Name = "^[A-Z][a-z]{3,}";
+    private static final String FIRST_NAME = "^[A-Z][a-z]{3,}";
+    private static final String LAST_NAME = "^[A-Z][a-z]{3,}";
 
-    public void register(UserDetails userDetail) {
-        validateUserDetails(userDetail);
-    }
+    public void register(User userDetail) {
 
-    private void validateUserDetails(UserDetails userDetail) {
-        Pattern pattern = Pattern.compile(First_Name);
-        Matcher matcher = pattern.matcher(userDetail.getFirstName());
-        boolean isValid = matcher.matches();
-
-        if (isValid) {
+        boolean isFirstNameValid = validateUserDetails(FIRST_NAME, userDetail.getFirstName());
+        boolean isLastNameValid = validateUserDetails(LAST_NAME, userDetail.getLastName());
+        if (isFirstNameValid && isLastNameValid) {
             System.out.println("Name is valid");
         } else {
-            System.out.println("Name is not valid");
+            System.out.println("Name is invalid");
         }
+
+    }
+
+    private boolean validateUserDetails(String regex, String dataToBeValidated) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(dataToBeValidated);
+        return matcher.matches();
     }
 }
