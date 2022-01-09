@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class UserRegistrationMain {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter FirstName: ");
-        String firstName = sc.next();
-        System.out.println("Enter LastName: ");
-        String lastName = sc.next();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter First-Name: ");
+        String firstName = scanner.next();
+        System.out.println("Enter Last-Name: ");
+        String lastName = scanner.next();
         System.out.println("Enter Email: ");
-        String email = sc.next();
-        System.out.println("Enter PhoneNumber");
-        String phoneNumber = sc.next();
+        String email = scanner.next();
+        System.out.println("Enter Phone-Number");
+        String number = scanner.next();
         System.out.println("Enter Password: ");
-        String password = sc.next();
-        User userdetail = new User(firstName, lastName, email, phoneNumber , password);
+        String password = scanner.next();
+        User userdetail = new User(firstName, lastName, email, number, password);
         UserRegistration registration = new UserRegistration();
         registration.register(userdetail);
     }
