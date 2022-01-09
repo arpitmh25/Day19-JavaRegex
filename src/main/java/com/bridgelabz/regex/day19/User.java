@@ -3,11 +3,12 @@ package com.bridgelabz.regex.day19;
 public class User {
     private String firstName;
     private String lastName;
-
-    public User(String firstName, String lastName) {
+    private String email;
+    public User(String firstName, String lastName , String email) {
 
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -17,5 +18,8 @@ public class User {
 
     public String getLastName() {
         return lastName;
+    }
+    public String getEmail() {
+        return email;
     }
 }
