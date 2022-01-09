@@ -6,15 +6,19 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     private static final String FIRST_NAME = "^[A-Z][a-z]{3,}";
     private static final String LAST_NAME = "^[A-Z][a-z]{3,}";
+    private static final String EMAIL = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[a-z]+$";
 
     public void register(User userDetail) {
 
         boolean isFirstNameValid = validateUserDetails(FIRST_NAME, userDetail.getFirstName());
         boolean isLastNameValid = validateUserDetails(LAST_NAME, userDetail.getLastName());
-        if (isFirstNameValid && isLastNameValid) {
-            System.out.println("Name is valid");
+        boolean isEmailValid = validateUserDetails(EMAIL, userDetail.getEmail());
+
+        if (isFirstNameValid && isLastNameValid && isEmailValid) {
+            System.out.println("Details entered are valid");
         } else {
-            System.out.println("Name is invalid");
+            System.out.println("Details entered are invalid");
+
         }
 
     }
