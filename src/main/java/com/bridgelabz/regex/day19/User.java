@@ -8,7 +8,7 @@ public class User {
     private final String password;
 
     public User(String firstName, String lastName, String email, String phoneNumber, String password) {
-
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -17,25 +17,26 @@ public class User {
     }
 
     public String getFirstName() {
-
         return firstName;
     }
+
 
     public String getLastName() {
         return lastName;
     }
 
+
     public String getEmail() {
         return email;
     }
 
-    public String getPhoneNumber() {
 
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public String getPassword() {
 
+    public String getPassword() {
         return password;
     }
 }
